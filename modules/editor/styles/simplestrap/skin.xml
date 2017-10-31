@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+	<title xml:lang="ko">Simplestrap</title>
+	<version>0.1</version>
+	<date>2013-11-22</date>
+	<author email_address="admin@wincomi.com" link="https://www.wincomi.com/">
+		<name xml:lang="ko">윈컴이</name>
+	</author>
+</skin>

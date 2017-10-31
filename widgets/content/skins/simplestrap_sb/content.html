@@ -1,0 +1,13 @@
+<ul class="list-group list-group-flush">
+<!--@foreach($widget_info->content_items as $key => $item)-->
+	<li class="list-group-item">
+		<!--@foreach($widget_info->option_view_arr as $k => $v)-->
+			<!--@if($v=='title')-->
+				<a href="{$item->getLink()}" target="_blank"|cond="$widget_info->new_window"<!--@if(!Mobile::isMobileCheckByAgent())--> data-html="true" data-container="body" data-toggle="tooltip" data-trigger="hover" data-placement="<!--@if($layout_info->site_frame=='content_sidebar')-->left<!--@else-->right<!--@end-->"<!--@end--> title="<!--@if($widget_info->show_browser_title=='Y' && $item->getBrowserTitle())-->{$item->getBrowserTitle()}<br /><!--@end--><!--@if($widget_info->show_category=='Y' && $item->get('category_srl') )-->{$item->getCategory()}<br /><!--@end--><i class='fa fa-user' area-hidden='true'></i> {strip_tags($item->getNickName())}<!--@if($widget_info->show_comment_count=='Y' && $item->getCommentCount())--> / <i class='fa fa-comment' area-hidden='true'></i> {$item->getCommentCount()}<!--@end--> <!--@if($widget_info->show_trackback_count=='Y' && $item->getTrackbackCount())--> / <i class='fa fa-random' area-hidden='true'></i> {$item->getTrackbackCount()}<!--@end-->">
+					{$item->getTitle($widget_info->subject_cut_size)}
+				</a>
+			<!--@end-->
+		<!--@end-->	
+	</li>
+<!--@end-->
+</ul>

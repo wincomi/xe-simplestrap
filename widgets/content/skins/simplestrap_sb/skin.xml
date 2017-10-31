@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+	<title xml:lang="ko">Simplestrap 사이드바 최신 글</title>
+	<version>1.0.2</version>
+	<date>2016-07-18</date>
+	<link>https://www.wincomi.com/</link>
+
+	<author email_address="admin@wincomi.com" link="https://www.wincomi.com">
+		<name xml:lang="ko">윈컴이</name>
+		<name xml:lang="en">Wincomi</name>
+	</author>
+</skin>

@@ -1,0 +1,40 @@
+<include target="custom/custom_sidebar_top.html" cond="in_array('custom_sidebar_top',$li->custom)" />
+
+<div class="panel panel-default" loop="$main_menu->list=>$key1,$val1" cond="$li->sb_menu == 'Y' && ($val1['selected'] && $val1['list'])">
+	{@
+		$_val1_link = explode('|fa-', $val1['link']);
+	}
+	<div class="panel-heading" cond="$val1['selected']"><h3 class="panel-title"><i class="fa fa-{$_val1_link[1]}" cond="$_val1_link[1]"></i> {$_val1_link[0]}</h3></div>
+	<ul class="list-group">
+		<block loop="$val1['list']=>$key2,$val2">
+			{@
+				$_val2_link = explode('|fa-', $val2['link']);
+			}
+			<!--@if($val2['link']!="----")-->
+				<li class="list-group-item<!--@if($val2['selected'])--> active<!--@end-->">
+					<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'"><i class="fa fa-{$_val2_link[1]}" cond="$_val2_link[1]"></i> {$_val2_link[0]}</a>
+				</li>
+			<!--@else-->
+				<li class="divider"></li>
+			<!--@end-->
+		</block>
+	</ul>
+</div>
+
+<div class="panel panel-default" cond="$li->sb_post!='N'">
+	<div class="panel-heading"><h3 class="panel-title"><i class="fa fa-file-o" area-hidden="true"></i> {$lang->ss_recent_posts}</h3></div>
+	<img class="zbxe_widget_output" widget="content" skin="simplestrap_sb" content_type="document" module_srls="{$li->sb_post_module}" list_type="normal" markup_type="list" page_count="1" option_view="title,nickname" show_browser_title="Y" show_comment_count="Y" show_trackback_count="Y" order_type="desc" subject_cut_size="27" list_count="{$li->sb_post_count}" />
+</div>
+
+<div class="panel panel-default" cond="$li->sb_comm!='N'">
+	<div class="panel-heading"><h3 class="panel-title"><i class="fa fa-comments-o" area-hidden="true"></i>  {$lang->ss_recent_comments}</h3></div>
+	<img class="zbxe_widget_output" widget="content" skin="simplestrap_sb" content_type="comment" module_srls="{$li->sb_comm_module}" list_type="normal" markup_type="list" page_count="1" option_view="title,nickname" show_browser_title="Y" show_comment_count="Y" show_trackback_count="Y" order_type="desc" subject_cut_size="27" list_count="{$li->sb_comm_count}" />
+</div>
+
+<div class="panel panel-default" cond="$li->sb_widget1"><div class="panel-body">{$li->sb_widget1}</div></div>
+<div class="panel panel-default" cond="$li->sb_widget2"><div class="panel-body">{$li->sb_widget2}</div></div>
+<div class="panel panel-default" cond="$li->sb_widget3"><div class="panel-body">{$li->sb_widget3}</div></div>
+<div class="panel panel-default" cond="$li->sb_widget3"><div class="panel-body">{$li->sb_widget4}</div></div>
+<div class="panel panel-default" cond="$li->sb_widget3"><div class="panel-body">{$li->sb_widget5}</div></div>
+
+<include target="custom/custom_sidebar_bottom.html" cond="in_array('custom_sidebar_bottom',$li->custom)" />

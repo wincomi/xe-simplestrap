@@ -1,0 +1,63 @@
+@charset "utf-8";
+.xm th, .xm td{text-align:center}
+.xm .title{text-align:left}
+.xm td.no{color:#777}
+.xm td.title a{color:#555}
+.xm .inputDate{display:inline-block !important}
+.xm .btn.dateRemover{color: #333;background-color: #fff;border-color: #ccc;}
+.xm .form-group.extra textarea, .xm .form-group.extra input[type="text"], .xm .form-group.extra input[type="password"], .xm .form-group.extra input[type="datetime"], .xm .form-group.extra input[type="datetime-local"], .xm .form-group.extra input[type="date"], .xm .form-group.extra input[type="month"], .xm .form-group.extra input[type="time"], .xm .form-group.extra input[type="week"], .xm .form-group.extra input[type="number"], .xm .form-group.extra input[type="email"], .xm .form-group.extra input[type="url"], .xm .form-group.extra input[type="search"], .xm .form-group.extra input[type="tel"], .xm .form-group.extra input[type="color"], .xm .form-group.extra select{
+display: block;
+width: 100%;
+height: 34px;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+color: #555;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+outline:none;
+}}
+.xm .form-group.extra textarea, .xm .form-group.extra input[type="text"]:focus, .xm .form-group.extra input[type="password"]:focus, .xm .form-group.extra input[type="datetime"]:focus, .xm .form-group.extra input[type="datetime-local"]:focus, .xm .form-group.extra input[type="date"]:focus, .xm .form-group.extra input[type="month"]:focus, .xm .form-group.extra input[type="time"]:focus, .xm .form-group.extra input[type="week"]:focus, .xm .form-group.extra input[type="number"]:focus, .xm .form-group.extra input[type="email"]:focus, .xm .form-group.extra input[type="url"]:focus, .xm .form-group.extra input[type="search"]:focus, .xm .form-group.extra input[type="tel"]:focus, .xm .form-group.extra input[type="color"]:focus{border-color: #66afe9;outline: 0;-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);}
+
+
+.xm .xm-title{margin:-10px -10px 10px -10px;background-color: #fcfcfc;border-bottom: 1px solid #eee;padding: 15px 10px;display: block;font-size:24px;}
+.xm-form .control-label{font-weight:bold}
+.xm-form #profile_imagetag button{
+background-color:#fff;color:#333;
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: normal;
+line-height: 1.42857143;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+-ms-touch-action: manipulation;
+  touch-action: manipulation;
+cursor: pointer;
+-webkit-user-select: none;
+ -moz-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+background-image: none;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+.xm input.inputDate.hasDatepicker{width:auto !important}
+.xm-form .xm-title{font-size:18px;margin-top:0;border-top:1px solid #eee}
+.xm-form .btn{margin-bottom:10px}
+@media (min-width: 768px) {
+.xm-form{max-width:550px;padding:0 10px;box-shadow: 0 1px 2px rgba(0, 0, 0, .05);margin:20px auto;border:1px solid #e7e7e7;}
+.xm-form-mini{max-width:350px}
+.xm-form .xm-title{border-top:0}
+
+.xm-form .btn{margin-bottom:0}
+}

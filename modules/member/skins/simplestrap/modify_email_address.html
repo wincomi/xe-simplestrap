@@ -1,0 +1,29 @@
+<include target="./common_header.html" />
+<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/member/skins/simplestrap/modify_email_address/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+	<p>{$XE_VALIDATOR_MESSAGE}</p>
+</div>
+<form ruleset="modifyEmailAddress" action="./" method="post" class="form-horizontal xm-form xm-form-mini">
+	<input type="hidden" name="module" value="member" />
+	<input type="hidden" name="act" value="procMemberModifyEmailAddress" />
+	<input type="hidden" name="success_return_url" value="{getRequestUriByServerEnviroment()}" />
+	<input type="hidden" name="xe_validator_id" value="modules/member/skins/simplestrap/modify_email_address/1" />
+	<fieldset>
+		<h1 class="xm-title"><i class="fa fa-envelope" area-hidden="true"></i> {$lang->cmd_modify_member_email_address}</h1>
+		<div class="form-group">
+			<label for="email_address" class="col-sm-3 control-label">{$lang->email_address}</label>
+			<div class="col-sm-9">
+				<input type="email" id="email_address" name="email_address" value="" required placeholder="{$lang->email_address}" title="{$lang->email_address}" class="form-control" />
+				<p class="help-block">{$lang->about_modify_member_email_address}</p>
+			</div>
+		</div>
+		<div class="form-actions form-group">
+			<div class="col-sm-9 col-sm-push-3">
+				<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-refresh"></i> {$lang->cmd_send_auth_new_emaill_address}</button>
+			</div>
+			<div class="col-sm-3 col-sm-pull-9">
+				<a href="{getUrl('act','dispMemberInfo')}" class="btn btn-default btn-block"<!--// onclick="history.back();return false;" -->><i class="fa fa-angle-left" area-hidden="true"></i> {$lang->cmd_cancel}</a>
+			</div>
+		</div>
+	</fieldset>
+</form>
+<include target="./common_footer.html" />

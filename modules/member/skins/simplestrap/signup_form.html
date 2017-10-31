@@ -1,0 +1,93 @@
+<load target="../../tpl/js/signup_check.js" />
+<!--// datepicker javascript plugin load -->
+<!--%load_js_plugin("ui")-->
+<!--%load_js_plugin("ui.datepicker")-->
+<include target="./common_header.html" />
+	<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/member/skins/default/signup_form/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+		<p>{$XE_VALIDATOR_MESSAGE}</p>
+	</div>
+    <form ruleset="@insertMember" id="fo_insert_member" action="./" method="post" enctype="multipart/form-data" class="form-horizontal xm-form">
+	    <h1 class="xm-title"><i class="fa fa-user-plus" aria-hidden="true"></i> {$lang->cmd_signup}</h1>
+		<input type="hidden" name="act" value="procMemberInsert" />
+		<input type="hidden" name="xe_validator_id" value="modules/member/skins/default/signup_form/1" />
+		<div class="agreement" cond="$member_config->agreement">
+			<div class="text">
+				{$member_config->agreement}
+			</div>
+			<div class="confirm">
+				<label for="accept_agree">
+					<input type="checkbox" name="accept_agreement" value="Y" id="accept_agree" />
+					<p class="help-block">{$lang->about_accept_agreement}</p>
+				</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="{$identifierForm->name}" class="col-sm-3 control-label"><span class="text-danger">*</span> {$identifierForm->title}</label>
+			<div class="col-sm-9">
+				<input type="text"|cond="$identifierForm->name!='email_address'" type="email"|cond="$identifierForm->name=='email_address'" name="{$identifierForm->name}" id="{$identifierForm->name}" value="{$identifierForm->value}" required class="form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password" class="col-sm-3 control-label"><span class="text-danger">*</span> {$lang->password}</label>
+			<div class="col-sm-9">
+				<input type="password" name="password" id="password" value="" required class="form-control" />
+				<p class="help-block">{$lang->about_password}</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password2" class="col-sm-3 control-label"><span class="text-danger">*</span> {$lang->password3}</label>
+			<div class="col-sm-9">
+				<input type="password" name="password2" id="password2" value="" required class="form-control" />
+			</div>
+		</div>
+		<div class="form-group extra" loop="$formTags=>$formTag" cond="$formTag->name != 'signature'">
+			<label for="{$formTag->name}" class="col-sm-3 control-label">{$formTag->title}</label>
+			<div class="col-sm-9">{$formTag->inputTag}</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">{$lang->allow_mailing}</label>
+			<div class="col-sm-9">
+				<label for="mailingYes" class="radio-inline"><input type="radio" name="allow_mailing" id="mailingYes" value="Y" checked="checked"|cond="$member_info->allow_mailing == 'Y'" /> {$lang->cmd_yes}</label>
+				<label for="mailingNo" class="radio-inline"><input type="radio" name="allow_mailing" id="mailingNo" value="N" checked="checked"|cond="$member_info->allow_mailing != 'Y'" /> {$lang->cmd_no}</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="allow_message" class="col-sm-3 control-label">{$lang->allow_message}</label>
+			<div class="col-sm-9">
+				<label for="allow_{$key}" loop="$lang->allow_message_type=>$key,$val" class="radio-inline"><input type="radio" name="allow_message" value="{$key}" checked="checked"|cond="$member_info->allow_message == $key || (!$member_info && $key == 'Y')" id="allow_{$key}" /> {$val}</label>
+			</div>
+		</div>
+		<div class="form-actions form-group">
+			<div class="col-sm-9 col-sm-push-3">
+				<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-check" area-hidden="true"></i> {$lang->cmd_registration}</button>
+			</div>
+			<div class="col-sm-3 col-sm-pull-9">
+				<a href="{getUrl('act','','member_srl','')}" class="btn btn-default btn-block"><i class="fa fa-angle-left" area-hidden="true"></i> {$lang->cmd_cancel}</a>
+			</div>
+		</div>
+	</form>
+<script>
+jQuery(function($){
+	// label for setup
+	$('.control-label[for]').each(function(){
+		var $this = $(this);
+		if($this.attr('for') == ''){
+			$this.attr('for', $this.next().children(':visible:first').attr('id'));
+		}
+	});
+});
+(function($){
+	$(function(){
+		var option = { changeMonth: true, changeYear: true, gotoCurrent: false,yearRange:'-100:+10', dateFormat:'yy-mm-dd', onSelect:function(){
+
+			$(this).prev('input[type="hidden"]').val(this.value.replace(/-/g,""))}
+		};
+		$.extend(option,$.datepicker.regional['{$lang_type}']);
+		$(".inputDate").datepicker(option);
+		$(".dateRemover").click(function() {
+			$(this).parent().prevAll('input').val('');
+			return false;});
+	});
+})(jQuery);
+</script>
+<include target="./common_footer.html" />

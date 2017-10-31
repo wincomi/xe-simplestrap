@@ -1,0 +1,59 @@
+<div id="main-carousel" class="carousel slide hidden-print" data-ride="carousel">
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+			<!--@if($li->slide_c1_url)--><a href="{$li->slide_c1_url}"><!--@end-->
+				<img src="{$li->slide_c1_img}"|cond="$li->slide_c1_img" src="{$li->path}img/demo1.jpg"|cond="!$li->slide_c1_img" alt="" />
+			<!--@if($li->slide_c1_url)--></a><!--@end-->
+			<div class="carousel-caption">
+				<h1 cond="!$li->slide_c1_img && !$li->slide_c1_text">First slide</h1>
+				<h1 cond="$li->slide_c1_text">{$li->slide_c1_text}</h1>
+				<p cond="!$li->slide_c1_img && !$li->slide_c1_desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat elit in consectetur consequat. Nam luctus facilisis neque, eget ultricies lectus vestibulum id.</p>
+				<p cond="$li->slide_c1_desc">{$li->slide_c1_desc}</p>
+			</div>
+		</div>
+		<div class="item" cond="$li->slide_c2_img">
+			<!--@if($li->slide_c2_url)--><a href="{$li->slide_c2_url}"><!--@end-->
+				<img src="{$li->slide_c2_img}" alt="" />
+			<!--@if($li->slide_c2_url)--></a><!--@end-->
+			<div class="carousel-caption">
+				<h1 cond="$li->slide_c2_text">{$li->slide_c2_text}</h1>
+				<p cond="$li->slide_c2_desc">{$li->slide_c2_desc}</p>
+			</div>
+		</div>
+		<div class="item" cond="$li->slide_c3_img">
+			<!--@if($li->slide_c3_url)--><a href="{$li->slide_c3_url}"><!--@end-->
+				<img src="{$li->slide_c3_img}" alt="" />
+			<!--@if($li->slide_c3_url)--></a><!--@end-->
+			<div class="carousel-caption">
+				<h1 cond="$li->slide_c3_text">{$li->slide_c3_text}</h1>
+				<p cond="$li->slide_c3_desc">{$li->slide_c3_desc}</p>
+			</div>
+		</div>
+		<div class="item" cond="$li->slide_c4_img">
+			<!--@if($li->slide_c4_url)--><a href="{$li->slide_c4_url}"><!--@end-->
+				<img src="{$li->slide_c4_img}" alt="" />
+			<!--@if($li->slide_c4_url)--></a><!--@end-->
+			<div class="carousel-caption">
+				<h1 cond="$li->slide_c4_text">{$li->slide_c4_text}</h1>
+				<p cond="$li->slide_c4_desc">{$li->slide_c4_desc}</p>
+			</div>
+		</div>
+		<div class="item" cond="$li->slide_c5_img">
+			<!--@if($li->slide_c5_url)--><a href="{$li->slide_c5_url}"><!--@end-->
+				<img src="{$li->slide_c5_img}" alt="" />
+			<!--@if($li->slide_c5_url)--></a><!--@end-->
+			<div class="carousel-caption">
+				<h1 cond="$li->slide_c5_text">{$li->slide_c5_text}</h1>
+				<p cond="$li->slide_c5_desc">{$li->slide_c5_desc}</p>
+			</div>
+		</div>
+	</div>
+	<a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev" cond="!($li->slide_c1_img && !$li->slide_c2_img && !$li->slide_c3_img && !$li->slide_c4_img && !$li->slide_c5_img)">
+		<span class="fa fa-angle-left fa-2x" aria-hidden="true"></span>
+		<span class="sr-only">{$lang->cmd_prev}</span>
+	</a>
+	<a class="right carousel-control" href="#main-carousel" role="button" data-slide="next" cond="!($li->slide_c1_img && !$li->slide_c2_img && !$li->slide_c3_img && !$li->slide_c4_img && !$li->slide_c5_img)">
+		<span class="fa fa-angle-right fa-2x" aria-hidden="true"></span>
+		<span class="sr-only">{$lang-cmd_next}</span>
+	</a>
+</div>

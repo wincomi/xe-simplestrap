@@ -1,0 +1,20 @@
+<include target="./common_header.html" />
+<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/member/skins/default/resend_auth_mail/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+	<p>{$XE_VALIDATOR_MESSAGE}</p>
+</div>
+<form ruleset="resendAuthMail" class="xm-form xm-form-mini" action="./" method="post">
+	<fieldset>
+		<h1 class="xm-title">{$lang->cmd_resend_auth_mail}</h1>
+		<input type="hidden" name="module" value="member" />
+		<input type="hidden" name="act" value="procMemberResendAuthMail" />
+		<input type="hidden" name="xe_validator_id" value="modules/member/skins/default/resend_auth_mail/1" />
+		<div class="form-group">
+			<div class="help-block">{$lang->about_resend_auth_mail}</div>
+			<input type="text" id="email_address" name="email_address" value="" title="{$lang->email_address}" placeholder="{$lang->email_address}" class="form-control" /> 
+		</div>
+		<div class="form-group form-actions">
+			<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-check" area-hidden="true"></i> {$lang->cmd_resend_auth_mail}</button>
+		</div>
+	</fieldset>
+</form>
+<include target="./common_footer.html" />

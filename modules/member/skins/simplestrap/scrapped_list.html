@@ -1,0 +1,33 @@
+<include target="./common_header.html" />
+<h1 class="hide">{$member_title = $lang->cmd_view_scrapped_document}</h1>
+<table class="table table-striped table-hover">
+	<caption class="hide">Total: {number_format($total_count)}, Page: {number_format($page)}/{number_format($total_page)}</caption>
+	<thead>
+		<tr>
+			<th>{$lang->no}</th>
+			<th class="title">{$lang->title}</th>
+			<th>{$lang->writer}</th>
+			<th>{$lang->date}</th>
+			<th>{$lang->cmd_delete}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr loop="$document_list=>$no,$val">
+			<td class="no">{$no}</td>
+			<td class="title"><a href="{getUrl('','document_srl',$val->document_srl)}" onclick="window.open(this.href);return false;">{htmlspecialchars($val->title)}</a></td>
+			<td><a href="#popup_menu_area" class="member_{$val->target_member_srl}">{$val->nick_name}</a></td>
+			<td>{zdate($val->regdate, "Y-m-d")}</td>
+			<td><a href="#" onclick="doDeleteScrap({$val->document_srl});return false"><i class="icon-trash"></i> {$lang->cmd_delete}</a></td>
+		</tr>
+	</tbody>
+</table>
+<div class="text-center">
+	<ul class="pagination">
+		<li><a href="{getUrl('page','','module_srl','')}"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+		<!--@while($page_no = $page_navigation->getNextPage())-->
+		<li class="active"|cond="$page == $page_no"><a href="{getUrl('page',$page_no,'module_srl','')}">{$page_no}</a></li>
+		<!--@end-->
+		<li><a href="{getUrl('page',$page_navigation->last_page,'module_srl','')}"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+	</ul>
+</div>
+<include target="./common_footer.html" />

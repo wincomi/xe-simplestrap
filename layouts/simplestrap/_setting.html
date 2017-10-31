@@ -1,0 +1,87 @@
+{@
+$li = $layout_info;
+$is_mobile = Mobile::isMobileCheckByAgent() && !$_COOKIE['fakeM'];
+$is_index_module = ($site_module_info->module_srl === $current_module_info->module_srl);
+
+if(!$li->custom) $li->custom = array();
+
+Context::addHtmlHeader('<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->');
+if(!$_COOKIE['fakeM']) Context::addHtmlHeader('<meta name="viewport" content="width=device-width, initial-scale=1">');
+Context::set("admin_bar","false");
+}
+<include target="./custom/custom_setting.html" cond="in_array('custom_setting',$li->custom)" />
+{@
+$colorset = $li->colorset;
+if(!$colorset) $colorset = 'info';
+if(!$li->sb_col) $li->sb_col = "2";
+
+// Context::addBodyClass($colorset);
+switch($colorset):
+	case 'primary':$colorset_cc = "#428bca";break;
+	case 'success':$colorset_cc = "#5cb85c";break;
+	case 'warning':$colorset_cc = "#f0ad4e";break;
+	case 'danger':$colorset_cc = "#d9534f";break;
+	default:$colorset_cc = "#5bc0de";break;
+endswitch;
+if(strpos($act,'dispMember')!== false || strpos($act,'dispCommunication') !== false || $act == 'dispNcenterliteNotifyList' || $act == 'dispNcenterliteUserConfig' || $act == 'dispSocialxeSnsManage') $is_member_menu = 'Y';
+if(!$li->jumbotron_align) $li->jumbotron_align = "center";
+
+if($is_index_module && ($li->slide_use == 'only_main' || !$li->slide_use)) $li->slide_use = 'Y';
+if(!$is_index_module && ($li->slide_use == 'only_main' || !$li->slide_use)) $li->slide_use = 'N';
+if($li->slide_module):
+	if(in_array($mid, explode(',',$li->slide_module))) $li->slide_use = 'Y';
+	else $li->slide_use = 'N';
+endif;
+if($is_index_module && ($li->jumbotron == 'no_main' || !$li->jumbotron)) $li->jumbotron = 'N';
+if($is_index_module && $li->jumbotron == 'only_main') $li->jumbotron = 'Y';
+if(!$is_index_module && ($li->jumbotron == 'no_main' || !$li->jumbotron)) $li->jumbotron = 'Y';
+
+if(!$li->site_frame) $li->site_frame = 'sidebar_content';
+if($li->site_frame_content):
+	$li->site_frame_content = explode(',',$li->site_frame_content);
+	if(in_array($mid,$li->site_frame_content)/* || $_COOKIE['simplestrap_full_frame']*/) $li->site_frame='content';
+endif;
+if($li->jumbotron_hide_mid):
+	$li->jumbotron_hide_mid = explode(',',$li->jumbotron_hide_mid);
+	if(in_array($mid,$li->jumbotron_hide_mid)) $li->jumbotron = 'N';
+endif;
+}
+<load target="./lang/lang.xml" />
+<block cond="__DEBUG__">
+<load target="./css/bootstrap.css" index="-5"  />
+<load target="./css/font-awesome.css" index="-4"  /> 
+<load target="./css/simplestrap.css" index="-3" />
+<load target="./js/bootstrap.js" type="body" />
+<load target="./js/jquery.placeholder.js" targetie="lt IE 10" type="body" />
+</block>
+<block cond="!__DEBUG__">
+<load target="./css/bootstrap.min.css" index="-5"  />
+<load target="./css/font-awesome.min.css" index="-4" />
+<load target="./css/simplestrap.min.css" index="-3" />
+<load target="./js/bootstrap.min.js" type="body" />
+<load target="./js/jquery.placeholder.min.js" targetie="lt IE 10" type="body" />
+</block>
+<load target="./css/bootstrap-ie7.css" targetie="ie 7" />
+<load target="./js/jquery.cookie.min.js" />
+<load target="./js/respond.min.js" targetie="lt IE 9" type="body" index="-2" />
+
+<load target="./custom/custom_style.css" cond="in_array('custom_style',$li->custom)" index="-2" />
+<load target="./custom/custom_js.js" cond="in_array('custom_js',$li->custom)" index="-1" type="body" />
+
+<script><include target="./js/simplestrap.cond.js" /></script>
+<style><include target="./css/simplestrap.cond.css" /></style>
+
+<block cond="$li->css3pie=='Y'">
+	<load target="./js/PIE.js" targetie="lt IE 9" index="0" type="body" />
+	<!--[if lt IE 9]>
+		<style scoped>.btn,.badge,.nav-pills>li>a,.panel{z-index:2;position:relative}</style>
+		<script>
+			jQuery(function($){
+				$(".btn,.badge,.nav-pills>li>a,.panel").each(function(){PIE.attach(this);});
+			});
+		</script>
+	<![endif]-->
+</block>
+<!--[if lt IE 10]>
+<script>jQuery(function($){$('input,textarea').placeholder();});</script>
+<![endif]-->

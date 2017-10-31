@@ -1,0 +1,39 @@
+<include target="./common_header.html" />
+<load target="filter/openid_login.xml" />
+<div class="xm-form xm-form-mini">
+	<div class="xm-title"><i class="fa fa-sign-in" area-hidden="true"></i> {$lang->cmd_login}</div>
+	<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/member/skin/simplestrap/login_form/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+		<p>{$XE_VALIDATOR_MESSAGE}</p>
+	</div>
+	<form ruleset="@login" action="./" method="post" id="fo_member_login">
+		<input type="hidden" name="success_return_url" value="{$referer_url}" />
+		<input type="hidden" name="act" value="procMemberLogin" />
+		<input type="hidden" name="xe_validator_id" value="modules/member/skin/default/login_form/1" />
+		<fieldset>
+			<div class="form-group">
+				<input type="text" cond="$identifier == 'user_id'" name="user_id" id="uid" required placeholder="{$lang->user_id}" class="form-control" title="{$lang->user_id}" />
+				<input type="email" cond="$identifier != 'user_id'" name="user_id" id="uid" required placeholder="{$lang->email_address}" class="form-control" title="{$lang->email_address}" />
+			</div>
+			<div class="form-group">
+				<input type="password" name="password" id="upw" required placeholder="{$lang->password}" title="{$lang->password}" required class="form-control" />
+			</div>
+			<div class="form-group">
+				<label for="keepid_opt" class="checkbox-inline"><input type="checkbox" name="keep_signed" id="keepid_opt" value="Y" onclick="if(this.checked) return confirm('{$lang->about_keep_signed}');" /> {$lang->keep_signed}</label>
+			</div>
+			<p>
+				<button type="submit" class="btn btn-primary btn-block"><span class="fa fa-sign-in"></span> {$lang->cmd_login}</button>
+			</p>
+			<div class="form-group form-actions btn-group btn-group-justified">
+				<a cond="$li->signup_on_login_modal!='Y'" href="{getUrl('act','dispMemberSignUpForm')}" class="btn btn-default btn-sm"><i class="fa fa-user-plus"></i> {$lang->cmd_signup}</a>
+				<a href="{getUrl('act','dispMemberFindAccount')}" class="btn btn-default btn-sm"><i class="fa fa-question-circle"></i> {$lang->cmd_find_member_account}</a>
+				<!--// <a href="{getUrl('act','dispMemberResendAuthMail')}" class="btn btn-default">{$lang->cmd_resend_auth_mail}</a> -->
+			</div>
+		</fieldset>
+	</form>
+</div>
+<script>
+jQuery(function($){
+	$('#modal-login').modal('show');
+});
+</script>
+<include target="./common_footer.html" />

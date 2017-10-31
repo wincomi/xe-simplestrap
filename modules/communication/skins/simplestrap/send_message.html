@@ -1,0 +1,45 @@
+<style scoped>
+	.x.popup{width:100% !important}
+	.x{padding:10px}
+	.xpress-editor select{display:inline-block}
+	.form-horizontal{overflow:hidden}
+</style>
+<script>jQuery("link[rel=stylesheet][href*='common/css/xe.<block cond="!__DEBUG__">min.</block>css'],link[rel=stylesheet][href*='modules/admin/tpl/css/admin.<block cond="!__DEBUG__">min.</block>css'],link[rel=stylesheet][href*='modules/admin/tpl/css/admin.bootstrap.<block cond="!__DEBUG__">min.</block>css']").remove();</script>
+<load target="../../../../layouts/simplestrap/css/bootstrap.min.css" index="2" />
+<load target="js/simplestrap.communication.js" />
+<div class="xc">
+	<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/communication/skins/default/send_message/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+		<p>{$XE_VALIDATOR_MESSAGE}</p>
+	</div>
+	<form ruleset="sendMessage" action="./" method="post" class="form-horizontal">
+		<fieldset>
+			<legend>{$lang->cmd_send_message}</legend>
+			<input type="hidden" name="module" value="communication" />
+			<input type="hidden" name="act" value="procCommunicationSendMessage" />
+			<input type="hidden" name="content" value="{htmlspecialchars($source_message->content)}" />
+			<input type="hidden" name="receiver_srl" value="{$receiver_info->member_srl}" />
+			<input type="hidden" name="xe_validator_id" value="modules/communication/skins/default/send_message/1" />
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="textfield1">{$lang->receiver}</label>
+				<div class="col-sm-10"><p class="form-control-static">{$receiver_info->nick_name}</p></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="title">{$lang->title}</label>
+				<div class="col-sm-10"><input type="text" name="title" id="message_title" value="{$source_message->title}" class="form-control" /></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="send_mail">{$lang->content}</label>
+				<div class="col-sm-10">{$editor}</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="send_mail">{$lang->cmd_option}</label>
+				<div class="col-sm-10"><div class="checkbox"><label><input type="checkbox" value="Y" name="send_mail" /> {$lang->cmd_send_mail}</label></div></div>
+			</div>
+			<div class="form-group" style="border-top:1px solid #eee;padding-top:10px">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary">{$lang->cmd_send_message}</button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>

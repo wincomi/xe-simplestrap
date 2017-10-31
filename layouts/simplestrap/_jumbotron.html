@@ -1,0 +1,100 @@
+{@ $module = $module_info->module;}
+<header id="jumbotron" class="jumbotron jumbotron-{$colorset} text-{$li->jumbotron_align} <!--@if($_COOKIE['simplestrap_jumbotron']=='hide')--> jumbotron-hide<!--@end-->">
+	<block cond="$is_member_menu!='Y'">
+	<div class="container">
+		<button type="button" id="jumbotron-hide" class="close" data-toggle="tooltip" data-title="{$lang->ss_hide_show}" data-placement="left"><i class="fa fa-angle-up" area-hidden="true"></i></button>
+		<div class="jumbotron-title-wrap">
+			<h1><a href="{getUrl('','mid',$mid)}">{$module_info->browser_title}</a></h1>
+			<block loop="$main_menu->list=>$key1,$val1">
+				<p cond="$val1['selected'] && !$val1['list']">{$val1['desc']}{@ break; }</p>
+				<block loop="$val1['list']=>$key2,$val2">
+					<p cond="$val1['selected'] && !$val2['selected']">{$val1['desc']}{@ break; }</p>
+					<p cond="$val2['selected']">{$val2['desc']}</p>
+				</block>
+			</block>
+			<p cond="$jumbotron_lead_auto_p=='Y'">{$jumbotron_lead}</p>
+			<block cond="$jumbotron_lead_auto_p!='Y'">{$jumbotron_lead}</block>
+			<i cond="$jumbotron_icon" class="fa {$jumbotron_icon} icon-jumbotron-<!--@if($li->jumbotron_align=='right')-->left<!--@else-->right<!--@end-->"></i>
+		</div>
+		<p cond="$module=='board'" class="btn-area">
+			<a href="{getURL('','mid',$mid,'act','dispBoardWrite')}"|cond="$act!='dispBoardWrite'" href="{getUrl('','mid',$mid)}"|cond="$act=='dispBoardWrite'" class="btn btn-default btn-lg tooltip-show-auto<!--@if($act=='dispBoardWrite')--> active<!--@end--><!--@if(!$grant->write_document)--> disabled<!--@end-->"<!--@if($grant->write_document && $act=='dispBoardWrite')--> data-trigger="manual" data-placement="bottom" data-html="true" data-title="<i class='fa fa-pencil' area-hidden='true'></i> <!--@if($document_srl)-->{$lang->ss_editing_document}<!--@else-->{$lang->ss_writing_document}<!--@end-->"<!--@end-->><i class="fa fa-pencil" area-hidden="true"></i> {$lang->cmd_write}</a>
+			<button type="button" id="jumbotron-search-popover" disabled|cond="$act=='dispBoardWrite'" class="btn btn-lg btn-default tooltip-show-auto<!--@if($search_keyword)--> active<!--@end-->"<!--@if($search_keyword)--> onclick="location.replace('{getUrl('','mid',$mid)}')" data-trigger="manual" data-placement="bottom" data-html="true" data-title="<i class='fa fa-check' area-hidden='true'></i> '{htmlspecialchars($search_keyword)}' {$lang->search_result}"<!--@end-->><i class="fa fa-search" area-hidden="true"></i> {$lang->board} {$lang->cmd_search}</button>
+			<block cond="$grant->manager">
+			<br class="hide visible-xs" />
+			<a href="{getUrl('','module','document','act','dispDocumentManageDocument')}" onclick="popopen(this.href,'manageDocument'); return false;" class="btn btn-lg btn-default" disabled|cond="$act && $act!='dispBoardList'"><i class="fa fa-check" area-hidden="true"></i> {$lang->cmd_manage_document}</a>
+			<a href="{getUrl('act','dispBoardAdminInsertBoard')}" class="btn btn-lg btn-default"><i class="fa fa-cog" area-hidden="true"></i> {$lang->cmd_setup}</a>
+			</block>
+		</p>
+		<p cond="$module=='kin'" class="btn-area">
+			<a href="{getURL('search_keyword','','act','dispKinWrite')}"|cond="$act!='dispKinWrite'" href="{getUrl('','mid',$mid)}"|cond="$act=='dispKinWrite'" class="btn btn-default btn-lg tooltip-show-auto<!--@if($act=='dispKinWrite')--> active<!--@end--><!--@if(!$grant->write_document)--> disabled<!--@end-->"<!--@if($act=='dispKinWrite')--> data-trigger="manual" data-placement="bottom" data-html="true" title="<i class='fa fa-pencil' area-hidden='true'></i> {$lang->ss_writing_question}"<!--@end-->><i class="fa fa-pencil" area-hidden="true"></i> {$lang->cmd_ask}</a>
+			<button type="button" id="jumbotron-search-popover" class="btn btn-lg btn-default tooltip-show-auto<!--@if($search_keyword)--> active<!--@end-->"<!--@if($search_keyword)-->onclick="location.replace('{getUrl('','mid',$mid)}')" data-trigger="manual" data-placement="bottom" data-html="true" title="<i class='fa fa-check' area-hidden='true'></i> '{htmlspecialchars($search_keyword)}' {$lang->search_result}"<!--@end--> disabled|cond="$act=='dispKinWrite'"><i class="fa fa-search"  area-hidden="true"></i> {$lang->cmd_search}</button>
+		</p>
+		<p cond="$module=='wiki'" class="btn-area">
+			<a class="btn btn-default btn-lg" href="{getUrl('','act','dispWikiEditPage','entry','','document_srl','','mid',$mid,'vid',$vid)}"><i class="fa fa-search" area-hidden="true"></i> {$lang->new_document}</a>
+			<a class="btn btn-default btn-lg" href="{getUrl('act','dispWikiTitleIndex','entry','','document_srl','')}"><i class="fa fa-file" area-hidden="true"></i> {$lang->cmd_view_document_list}</a>
+			<!--// <a class="btn btn-default btn-lg" href="{getUrl('act','dispWikiTreeIndex','entry','','document_srl','')}"><i class="fa fa-list" area-hidden="true"></i> {$lang->cmd_view_document_tree}</a> -->
+			<button type="button" id="jumbotron-search-popover" class="btn btn-lg btn-default tooltip-show-auto<!--@if($search_keyword)--> active<!--@end-->"<!--@if($search_keyword)-->onclick="location.replace('{getUrl('','mid',$mid)}')" data-trigger="manual" data-placement="bottom" data-html="true" title="<i class='fa fa-check' area-hidden='true'></i> '{htmlspecialchars($search_keyword)}' {$lang->search_result}"<!--@end--> disabled|cond="$act=='dispKinWrite'"><i class="fa fa-search" area-hidden="true"></i> {$lang->cmd_search}</button>
+			<a class="btn btn-default btn-lg" cond="$grant->manager" href="{getUrl('act','dispWikiAdminInsertWiki')}"><i class="fa fa-cog" area-hidden="true"></i> {$lang->cmd_setup}</a>
+		</p>
+		<p cond="$module=='resource'" class="btn-area">
+			<button type="button" id="jumbotron-search-popover" class="btn btn-lg btn-default tooltip-show-auto<!--@if($search_keyword)--> active<!--@end-->"<!--@if($search_keyword)-->onclick="location.replace('{getUrl('','mid',$mid)}')" data-trigger="manual" data-placement="bottom" data-html="true" title="<i class='fa fa-check' area-hidden='true'></i> '{htmlspecialchars($search_keyword)}' {$lang->search_result}"<!--@end-->""><i class="fa fa-search" area-hidden="true"></i> {$lang->cmd_search}</button>
+			<a class="btn btn-default btn-lg<!--@if($act=='dispResourcePackageList' || $act=='dispResourcePackage')--> active<!--@end-->" href="{getSiteUrl($site_module_info->domain, '', 'mid',$module_info->mid,'act','dispResourcePackageList')}"><i class="fa fa-file" area-hidden="true"></i> {$lang->cmd_list_my_package}</a>
+			<a class="btn btn-default btn-lg<!--@if($act=='dispResourceInsertPackage')--> active<!--@end-->" href="{getSiteUrl($site_module_info->domain, '', 'mid',$module_info->mid,'act','dispResourceInsertPackage')}"><i class="fa fa-plus" area-hidden="true"></i> {$lang->cmd_insert_package}</a>
+			<block cond="$grant->manager">
+         <a class="btn btn-default btn-lg<!--@if($act=='dispResourceManage')--> active<!--@end-->" href="{getSiteUrl($site_module_info->domain, '', 'mid',$module_info->mid,'act','dispResourceManage')}"><i class="fa fa-filter" area-hidden="true"></i> {$lang->cmd_manage_package}</a>
+         <a class="btn btn-default btn-lg<!--@if($act=='dispResourceAdminInsert')--> active<!--@end-->" href="{getSiteUrl($site_module_info->domain, '', 'mid',$module_info->mid,'act','dispResourceAdminInsert')}"><i class="fa fa-cog" area-hidden="true"></i> {$lang->cmd_setup}</a>
+			</block>
+		</p>
+	</div>
+	<div id="jumbotron-search-popover-content" class="hide">
+		<form cond="$module!='wiki'" action="{getUrl()}" method="get" onsubmit="return procFilter(this, search)" no-error-return-url="true" target="_blank"|cond="$act=='dispBoardWrite'">
+			<input type="hidden" name="vid" value="{$vid}" />
+			<input type="hidden" name="mid" value="{$mid}" />
+			<input type="hidden" name="category" value="{$category}" />
+			<input type="hidden" name="act" value="" />
+			<div class="form-group">
+				<input type="search" name="search_keyword" value="{htmlspecialchars($search_keyword)}" placeholder="{$lang->ss_search_input}" class="form-control" />
+			</div>
+			<div class="form-group">
+				<!--@if($module!='wiki' && $module!='resource')-->
+				<div class="row">
+					<div class="col-sm-6">
+						<select name="search_target" class="form-control">
+							<option loop="$search_option=>$key,$val" value="{$key}" selected="selected"|cond="$search_target==$key">{$val}</option>
+						</select>					
+					</div>
+					<div class="col-sm-6">
+				<!--@end-->
+						<button type="submit" class="btn btn-{$colorset} btn-block"><i class="fa fa-search" area-hidden="true"></i> {$lang->cmd_search}</button>
+				<!--@if($module!='wiki' && $module!='resource')-->
+					</div>
+				</div>
+				<!--@end-->
+			</div>
+			<div class="form-group" cond="$last_division">
+			    <a href="{getUrl('page',1,'document_srl','','division',$last_division,'last_division','')}" class="btn btn-default">{$lang->cmd_search_next}</a>
+			</div>
+		</form>
+		<form cond="$module=='wiki'" action="{getUrl()}" method="post">
+			<input type="hidden" name="mid" value="{$mid}" />
+			<input type="hidden" name="vid" value="{$vid}" />
+			<input type="hidden" name="act" value="dispWikiContent" />
+			<div class="form-group">
+				<input type="text" name="entry" placeholder="{$lang->cmd_move}" class="form-control" />
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-{$colorset} btn-block btn-sm"><i class="fa fa-link" area-hidden="true"></i> {$lang->cmd_move}</button></div>
+			</div>
+		</form>
+	</div>
+	</block>
+	<div class="container" cond="$is_member_menu=='Y'">
+		<button type="button" id="jumbotron-hide" class="close" data-toggle="tooltip" data-title="{$lang->ss_hide_show}" data-placement="left"><i class="fa fa-angle-up" area-hidden="true"></i></button>
+		<h1>
+			<block loop="$logged_info->menu_list=>$key,$val" cond="$key==$act">
+				<a href="{getUrl('', 'act',$key, 'mid', $mid, 'vid', $vid)}">{Context::getLang($val)}</a>
+			</block>	
+		</h1>
+	</div>
+</header>
+{@ unset($module); }

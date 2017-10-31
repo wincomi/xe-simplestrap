@@ -1,0 +1,37 @@
+<include target="./common_header.html" />
+<style>#xm-tabs{display:none}</style>	
+<div cond="$XE_VALIDATOR_MESSAGE && $XE_VALIDATOR_ID == 'modules/member/skin/simplestrap/leave_form/1'" class="message {$XE_VALIDATOR_MESSAGE_TYPE}">
+	<p>{$XE_VALIDATOR_MESSAGE}</p>
+</div>
+<form ruleset="leaveMember" id="fo_insert_member" action="./" method="post" class="form-horizontal xm-form xm-form-mini">
+	<input type="hidden" name="module" value="member" />
+	<input type="hidden" name="act" value="procMemberLeave" />
+    <input type="hidden" name="mid" value="{$mid}" />
+    <input type="hidden" name="document_srl" value="{$document_srl}" />
+    <input type="hidden" name="page" value="{$page}" />
+	<input type="hidden" name="xe_validator_id" value="modules/member/skin/simplestrap/leave_form/1" />
+	<fieldset>
+		<h1 class="xm-title"><i class="fa fa-user-times" area-hidden="true"></i> {$member_title = $lang->msg_leave_member}</h1>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">{Context::getLang($identifier)}</label>
+			<div class="col-sm-9">
+				<input type="text" readonly value="{$formValue}" class="form-control" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password" class="col-sm-3 control-label">{$lang->password}</label>
+			<div class="col-sm-9">
+				<input type="password" name="password" id="cpw" required placeholder="{$lang->password}" title="{$lang->password}" class="form-control" />
+			</div>
+		</div>
+		<div class="form-actions form-group">
+			<div class="col-sm-9 col-sm-push-3">
+				<button type="submit" class="btn btn-danger btn-block"><i class="fa fa-user-times" area-hidden="true"></i> {$lang->cmd_leave}</button>
+			</div>
+			<div class="col-sm-3 col-sm-pull-9">
+				<a href="{getUrl('act','dispMemberInfo')}" class="btn btn-default btn-block"<!--// onclick="history.back();return false;" -->><i class="fa fa-angle-left" area-hidden="true"></i> {$lang->cmd_cancel}</a>
+			</div>
+		</div>
+	</fieldset>
+</form>
+<include target="./common_footer.html" />

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lang>
+	<item name="ss_skip_to_content">
+		<value xml:lang="ko"><![CDATA[본문 바로가기]]></value>
+		<value xml:lang="en"><![CDATA[Skip to content]]></value>
+	</item>
+	<item name="ss_toggle_navigation">
+		<value xml:lang="ko"><![CDATA[메뉴 토글하기]]></value>
+		<value xml:lang="en"><![CDATA[Toggle navigation]]></value>
+	</item>
+	<item name="ss_enter_to_search">
+		<value xml:lang="ko"><![CDATA[엔터 키를 눌러 검색...]]></value>
+		<value xml:lang="en"><![CDATA[Search]]></value>
+	</item>
+	<item name="ss_search_input">
+		<value xml:lang="ko"><![CDATA[검색할 내용을 입력하세요.]]></value>
+		<value xml:lang="en"><![CDATA[Search]]></value>
+	</item>
+	
+	<item name="ss_writing_document">
+		<value xml:lang="ko"><![CDATA[글 작성 중]]></value>
+		<value xml:lang="en"><![CDATA[Writing document]]></value>
+	</item>
+	<item name="ss_editing_document">
+		<value xml:lang="ko"><![CDATA[글 수정 중]]></value>
+		<value xml:lang="en"><![CDATA[Editing document]]></value>
+	</item>
+	<item name="ss_writing_question">
+		<value xml:lang="ko"><![CDATA[질문 작성 중]]></value>
+		<value xml:lang="en"><![CDATA[Writing question]]></value>
+	</item>
+	
+	<item name="ss_recent_posts">
+		<value xml:lang="ko"><![CDATA[새로운 글]]></value>
+		<value xml:lang="en"><![CDATA[Recent Posts]]></value>
+	</item>
+	<item name="ss_recent_comments">
+		<value xml:lang="ko"><![CDATA[새로운 댓글]]></value>
+		<value xml:lang="en"><![CDATA[Recent Comments]]></value>
+	</item>
+	
+	<item name="ss_fullscreen_desc">
+		<value xml:lang="ko"><![CDATA[전체화면 전환]]></value>
+		<value xml:lang="en"><![CDATA[Toggle fullscreen]]></value>		
+	</item>
+
+	<item name="ss_hide_show">
+		<value xml:lang="ko"><![CDATA[숨기기/보이기]]></value>
+		<value xml:lang="en"><![CDATA[Hide/Show]]></value>		
+	</item>
+
+	<item name="ss_or">
+		<value xml:lang="ko"><![CDATA[혹은]]></value>
+		<value xml:lang="en"><![CDATA[or]]></value>
+	</item>
+	<item name="ss_is_not_member">
+		<value xml:lang="ko"><![CDATA[회원이 아니신가요?]]></value>
+		<value xml:lang="en"><![CDATA[Is not member?]]></value>
+	</item>
+	<item name="ss_social_login">
+		<value xml:lang="ko"><![CDATA[소셜 로그인]]></value>
+		<value xml:lang="en"><![CDATA[SNS Login]]></value>	
+	</item>
+	<item name="ss_default_login">
+		<value xml:lang="ko"><![CDATA[일반 로그인]]></value>
+		<value xml:lang="en"><![CDATA[Default Login]]></value>	
+	</item>
+</lang>

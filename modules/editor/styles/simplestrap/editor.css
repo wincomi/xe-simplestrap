@@ -1,0 +1,5 @@
+@import url('../../../../layouts/simplestrap/css/bootstrap.min.css');
+@import url('../../../../layouts/simplestrap/css/font-awesome.min.css');
+@import url('../../../../layouts/simplestrap/css/simplestrap.min.css');
+body{background:none;margin:0;padding:0;font-size:14px !important}
+.xe_content{font-size:14px}
