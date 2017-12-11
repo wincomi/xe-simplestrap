@@ -18,7 +18,7 @@
     <input type="hidden" name="page" value="{$page}" />
 	<input type="hidden" name="xe_validator_id" value="modules/member/skins/default/modify_info/1" />
 	<fieldset>
-		<h1 class="xm-title"><i class="fa fa-pencil" area-hidden="true"></i> {$lang->msg_update_member}</h1>
+		<h1 class="xm-title"><i class="fa fa-pencil" aria-hidden="true"></i> {$lang->msg_update_member}</h1>
 		<div class="form-group">
 			<label for="{$identifierForm->name}" class="col-sm-3 control-label"><em style="color:red">*</em> {$identifierForm->title} </label>
 			<div class="col-sm-9">
@@ -55,7 +55,7 @@
 				<button type="submit" class="btn btn-primary btn-block"><i class="fa fa-check"></i> {$lang->cmd_registration}</button>
 			</div>
 			<div class="col-sm-3 col-sm-pull-9">
-				<a href="{getUrl('act','dispMemberInfo')}" class="btn btn-default btn-block" onclick="history.back();return false;"><i class="fa fa-angle-left" area-hidden="true"></i> {$lang->cmd_cancel}</a>
+				<a href="{getUrl('act','dispMemberInfo')}" class="btn btn-default btn-block" onclick="history.back();return false;"><i class="fa fa-angle-left" aria-hidden="true"></i> {$lang->cmd_cancel}</a>
 			</div>
 		</div>
 	</fieldset>

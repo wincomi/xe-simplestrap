@@ -21,9 +21,9 @@
 				<option loop="$friend_group_list => $key,$val" value="{$val->friend_group_srl}" selected="selected"|cond="$val->friend_group_srl == $friend_group_srl">{$val->title}</option>
 			</select>
 			<span class="btn-group">
-				<button type="button" class="btn btn-default" onclick="doRenameFriendGroup();return false;"><i class="fa fa-pencil" area-hidden="true"></i> {$lang->cmd_modify}</button>
-				<button type="button" class="btn btn-default" onclick="doDeleteFriendGroup();return false;"><i class="fa fa-times" area-hidden="true"></i> {$lang->cmd_delete}</button>
-				<a href="{getUrl('','module','communication','act','dispCommunicationAddFriendGroup')}" class="btn btn-default" onclick="popopen(this.href);return false;"><i class="fa fa-user-plus" area-hidden="true"></i> {$lang->cmd_add_friend_group}</a>
+				<button type="button" class="btn btn-default" onclick="doRenameFriendGroup();return false;"><i class="fa fa-pencil" aria-hidden="true"></i> {$lang->cmd_modify}</button>
+				<button type="button" class="btn btn-default" onclick="doDeleteFriendGroup();return false;"><i class="fa fa-times" aria-hidden="true"></i> {$lang->cmd_delete}</button>
+				<a href="{getUrl('','module','communication','act','dispCommunicationAddFriendGroup')}" class="btn btn-default" onclick="popopen(this.href);return false;"><i class="fa fa-user-plus" aria-hidden="true"></i> {$lang->cmd_add_friend_group}</a>
 			</span>
 		</div>
 	
@@ -51,18 +51,18 @@
 				<option loop="$friend_group_list => $key,$val" value="{$val->friend_group_srl}">{$val->title}</option>
 			</select>
 			<span class="btn-group __submit_group">
-				<button type="submit" name="act" class="btn btn-default" value="procCommunicationMoveFriend"><i class="fa fa-arrow-circle-o-right" area-hidden="true"></i> {$lang->cmd_move}</button>
+				<button type="submit" name="act" class="btn btn-default" value="procCommunicationMoveFriend"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> {$lang->cmd_move}</button>
 				<button type="submit" name="act" class="btn btn-default" value="procCommunicationDeleteFriend"><i class="fa fa-trash"></i> {$lang->cmd_delete}</button>
 			</span>
 		</div>
 	</fieldset>
 	<div class="text-center">
 		<ul class="pagination">
-			<li><a href="{getUrl('page','','document_srl','')}"><i class="fa fa-angle-left" area-hidden="true"></i></a></li>
+			<li><a href="{getUrl('page','','document_srl','')}"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
 			<!--@while($page_no = $page_navigation->getNextPage())-->
 			<li class="active"|cond="$page == $page_no"><a href="{getUrl('page',$page_no,'document_srl','')}">{$page_no}</a></li>
 			<!--@end-->
-			<li><a href="{getUrl('page',$page_navigation->last_page,'document_srl','')}"><i class="fa fa-angle-right" area-hidden="true"></i></a></li>
+			<li><a href="{getUrl('page',$page_navigation->last_page,'document_srl','')}"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 		</ul>
 	</div>
 </form>

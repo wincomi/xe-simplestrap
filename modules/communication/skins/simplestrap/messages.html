@@ -37,9 +37,9 @@
 	</tr>
 </table>
 <div style="margin-bottom:10px;text-align:right" cond="$message">
-	<button class="btn btn-primary" cond="$message->message_type != 'S' && $message->member_srl != $logged_info->member_srl" type="button" onclick="doSendMessage('{$message->sender_srl}','{$message->message_srl}');"><i class="fa fa-mail-reply" area-hidden="true"></i> {$lang->cmd_reply_message}</button>
-	<button class="btn btn-success" cond="$message->message_type == 'R'" type="button" onclick="doStoreMessage('{$message->message_srl}');"><i class="fa fa-folder" area-hidden="true"></i> {$lang->cmd_store}</button>
-	<button class="btn btn-danger" type="button" onclick="doDeleteMessage('{$message->message_srl}');"><i class="fa fa-trash" area-hidden="true"></i> {$lang->cmd_delete}</button>
+	<button class="btn btn-primary" cond="$message->message_type != 'S' && $message->member_srl != $logged_info->member_srl" type="button" onclick="doSendMessage('{$message->sender_srl}','{$message->message_srl}');"><i class="fa fa-mail-reply" aria-hidden="true"></i> {$lang->cmd_reply_message}</button>
+	<button class="btn btn-success" cond="$message->message_type == 'R'" type="button" onclick="doStoreMessage('{$message->message_srl}');"><i class="fa fa-folder" aria-hidden="true"></i> {$lang->cmd_store}</button>
+	<button class="btn btn-danger" type="button" onclick="doDeleteMessage('{$message->message_srl}');"><i class="fa fa-trash" aria-hidden="true"></i> {$lang->cmd_delete}</button>
 </div>
 
 <form action="./" method="post" id="fo_message_list">
@@ -80,16 +80,16 @@
 		</tbody>
 	</table>
 	<div class="btnArea">
-		<button type="submit" class="btn btn-danger"><i class="fa fa-trash" area-hidden="true"></i> {$lang->cmd_delete}</button>
+		<button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> {$lang->cmd_delete}</button>
 	</div>
 </form>
 <div class="text-center">
 	<ul class="pagination">
-		<li><a href="{getUrl('page','','document_srl','')}"><i class="fa fa-angle-left" area-hidden="true"></i></a></li>
+		<li><a href="{getUrl('page','','document_srl','')}"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
 		<!--@while($page_no = $page_navigation->getNextPage())-->
 		<li class="active"|cond="$page == $page_no"><a href="{getUrl('page',$page_no,'document_srl','')}">{$page_no}</a></li>
 		<!--@end-->
-		<li><a href="{getUrl('page',$page_navigation->last_page,'document_srl','')}"><i class="fa fa-angle-right" area-hidden="true"></i></a></li>
+		<li><a href="{getUrl('page',$page_navigation->last_page,'document_srl','')}"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
 	</ul>
 </div>
 <include target="./common_footer.html" />
