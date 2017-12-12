@@ -1,6 +1,6 @@
 <block cond="!$li->xe_css_remove || $li->xe_css_remove=='script'">
 <!--@if(defined('RX_VERSION'))-->
-jQuery("link[rel=stylesheet][href*='rhymix.scss.<block cond="!__DEBUG__">min.</block>css']").remove();
+jQuery("link[rel=stylesheet][href*='rhymix.less.<block cond="!__DEBUG__">min.</block>css']").remove();
 <!--@else-->
 jQuery("link[rel=stylesheet][href*='common/css/xe.<block cond="!__DEBUG__">min.</block>css']").remove();
 <!--@end-->
