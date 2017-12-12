@@ -603,20 +603,6 @@
 					<title xml:lang="ko">레이아웃에서 제거하지 않음</title>
 				</options>
 			</var>
-			
-			<var name="css3pie" type="select">
-				<title xml:lang="ko">CSS3PIE</title>
-				<title xml:lang="en">CSS3PIE</title>
-				<description xml:lang="ko">Internet Explorer 하위 버전에서 둥근 모서리 등을 사용할 수 있는 CSS3PIE를 사용합니다. (* 참고: css3pie.com)</description>
-				<options value="N">
-					<title xml:lang="ko">아니요</title>
-					<title xml:lang="en">No</title>
-				</options>
-				<options value="Y">
-					<title xml:lang="ko">예</title>
-					<title xml:lang="en">Yes</title>
-				</options>
-			</var>
 		</group>
 	</extra_vars>
 	

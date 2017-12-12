@@ -71,17 +71,6 @@ endif;
 <script><include target="./js/simplestrap.cond.js" /></script>
 <style><include target="./css/simplestrap.cond.css" /></style>
 
-<block cond="$li->css3pie=='Y'">
-	<load target="./js/PIE.js" targetie="lt IE 9" index="0" type="body" />
-	<!--[if lt IE 9]>
-		<style scoped>.btn,.badge,.nav-pills>li>a,.panel{z-index:2;position:relative}</style>
-		<script>
-			jQuery(function($){
-				$(".btn,.badge,.nav-pills>li>a,.panel").each(function(){PIE.attach(this);});
-			});
-		</script>
-	<![endif]-->
-</block>
 <!--[if lt IE 10]>
 <script>jQuery(function($){$('input,textarea').placeholder();});</script>
 <![endif]-->
