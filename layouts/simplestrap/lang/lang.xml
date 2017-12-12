@@ -10,7 +10,7 @@
 	</item>
 	<item name="ss_enter_to_search">
 		<value xml:lang="ko"><![CDATA[엔터 키를 눌러 검색...]]></value>
-		<value xml:lang="en"><![CDATA[Search]]></value>
+		<value xml:lang="en"><![CDATA[Press enter to search...]]></value>
 	</item>
 	<item name="ss_search_input">
 		<value xml:lang="ko"><![CDATA[검색할 내용을 입력하세요.]]></value>
@@ -45,8 +45,8 @@
 	</item>
 
 	<item name="ss_hide_show">
-		<value xml:lang="ko"><![CDATA[숨기기/보이기]]></value>
-		<value xml:lang="en"><![CDATA[Hide/Show]]></value>		
+		<value xml:lang="ko"><![CDATA[보이기/숨기기]]></value>
+		<value xml:lang="en"><![CDATA[Show/Hide]]></value>		
 	</item>
 
 	<item name="ss_or">
@@ -55,14 +55,14 @@
 	</item>
 	<item name="ss_is_not_member">
 		<value xml:lang="ko"><![CDATA[회원이 아니신가요?]]></value>
-		<value xml:lang="en"><![CDATA[Is not member?]]></value>
+		<value xml:lang="en"><![CDATA[Not a member yet?]]></value>
 	</item>
 	<item name="ss_social_login">
 		<value xml:lang="ko"><![CDATA[소셜 로그인]]></value>
-		<value xml:lang="en"><![CDATA[SNS Login]]></value>	
+		<value xml:lang="en"><![CDATA[Social login]]></value>	
 	</item>
 	<item name="ss_default_login">
 		<value xml:lang="ko"><![CDATA[일반 로그인]]></value>
-		<value xml:lang="en"><![CDATA[Default Login]]></value>	
+		<value xml:lang="en"><![CDATA[Default login]]></value>	
 	</item>
 </lang>
