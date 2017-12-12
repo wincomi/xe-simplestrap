@@ -1,11 +1,10 @@
 {@
 $li = $layout_info;
-$is_mobile = Mobile::isMobileCheckByAgent() && !$_COOKIE['fakeM'];
 $is_index_module = ($site_module_info->module_srl === $current_module_info->module_srl);
 
 if(!$li->custom) $li->custom = array();
 
-if(!$_COOKIE['fakeM']) Context::addHtmlHeader('<meta name="viewport" content="width=device-width, initial-scale=1">');
+Context::addHtmlHeader('<meta name="viewport" content="width=device-width, initial-scale=1">');
 }
 <include target="./custom/custom_setting.html" cond="in_array('custom_setting',$li->custom)" />
 {@

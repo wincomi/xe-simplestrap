@@ -15,7 +15,7 @@ $("[data-toggle='tooltip']").tooltip();
 $('.tooltip-show-auto').tooltip('show');
 <block cond="$li->code_prettify=='Y'">window.prettyPrint && prettyPrint();</block>
 
-<block cond="!$is_logged && !$is_mobile">
+<block cond="!$is_logged && !Mobile::isMobileCheckByAgent()">
 /* $("#dropdown-toggle-login>a").tooltip({title:"{$lang->cmd_login}",placement:"bottom",trigger:"manual"}).tooltip("show").hover(function(){$(this).tooltip("hide");}); */
 </block>
 <block cond="$li->navbar_fixed!='N' && preg_match('/iPod|iPhone|iPad|Android|BlackBerry|SymbianOS|Bada|Kindle|Wii|SCH-|SPH-|CANU-|Windows Phone|Windows CE|POLARIS|Palm|Dorothy Browser|Mobile|Opera Mobi|Opera Mini|Minimo|AvantGo|NetFront|Nokia|LGPlayer|SonyEricsson|HTC/',getenv('HTTP_USER_AGENT'))">
