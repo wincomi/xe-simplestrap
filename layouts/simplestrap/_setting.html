@@ -5,9 +5,7 @@ $is_index_module = ($site_module_info->module_srl === $current_module_info->modu
 
 if(!$li->custom) $li->custom = array();
 
-Context::addHtmlHeader('<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->');
 if(!$_COOKIE['fakeM']) Context::addHtmlHeader('<meta name="viewport" content="width=device-width, initial-scale=1">');
-Context::set("admin_bar","false");
 }
 <include target="./custom/custom_setting.html" cond="in_array('custom_setting',$li->custom)" />
 {@
