@@ -4,7 +4,7 @@
 	{@
 		$_val1_link = explode('|fa-', $val1['link']);
 	}
-	<div class="panel-heading" cond="$val1['selected']"><h3 class="panel-title"><i class="fa fa-{$_val1_link[1]}" cond="$_val1_link[1]"></i> {$_val1_link[0]}</h3></div>
+	<div class="panel-heading" cond="$val1['selected']"><h3 class="panel-title"><i class="fa fa-{$_val1_link[1]}" aria-hidden="true" cond="$_val1_link[1]"></i> {$_val1_link[0]}</h3></div>
 	<ul class="list-group">
 		<block loop="$val1['list']=>$key2,$val2">
 			{@
@@ -12,7 +12,7 @@
 			}
 			<!--@if($val2['link']!="----")-->
 				<li class="list-group-item<!--@if($val2['selected'])--> active<!--@end-->">
-					<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'"><i class="fa fa-{$_val2_link[1]}" cond="$_val2_link[1]"></i> {$_val2_link[0]}</a>
+					<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'"><i class="fa fa-{$_val2_link[1]}" aria-hidden="true" cond="$_val2_link[1]"></i> {$_val2_link[0]}</a>
 				</li>
 			<!--@else-->
 				<li class="divider"></li>

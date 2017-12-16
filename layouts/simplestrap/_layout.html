@@ -23,7 +23,7 @@
 					{@
 						$_val1_link = explode('|fa-', $val1['link']);
 					}
-					<i class="fa fa-{$_val1_link[1]}" cond="$_val1_link[1]"></i> {$_val1_link[0]}
+					<i class="fa fa-{$_val1_link[1]}" aria-hidden="true" cond="$_val1_link[1]"></i> {$_val1_link[0]}
 					<!--@if($val1['list'])--> <span class="caret"></span><!--@end--></a>
 					<ul cond="$val1['list']" class="dropdown-menu">
 						<block loop="$val1['list']=>$key2,$val2" cond="$val2['link']">
@@ -35,7 +35,7 @@
 								{@
 									$_val2_link = explode('|fa-', $val2['link']);
 								}
-								<i class="fa fa-{$_val2_link[1]}" cond="$_val2_link[1]"></i> {$_val2_link[0]}
+								<i class="fa fa-{$_val2_link[1]}" aria-hidden="true" cond="$_val2_link[1]"></i> {$_val2_link[0]}
 							</a>
 						</li>
 						<!--@else-->
@@ -134,7 +134,7 @@
 								$_val1_link = explode('|fa-', $val1['link']);
 							}
 							<a href="{$val1['href']}">
-								<i class="fa fa-{$_val1_link[1]}" cond="$_val1_link[1]"></i> {$_val1_link[0]}
+								<i class="fa fa-{$_val1_link[1]}" aria-hidden="true" cond="$_val1_link[1]"></i> {$_val1_link[0]}
 							</a>
 						</li>
 						<block loop="$val1['list']=>$key2,$val2" cond="$val2['selected']">
@@ -143,7 +143,7 @@
 									$_val2_link = explode('|fa-', $val2['link']);
 								}
 								<a href="{$val2['href']}">
-									<i class="fa fa-{$_val2_link[1]}" cond="$_val2_link[1]"></i> {$_val2_link[0]}
+									<i class="fa fa-{$_val2_link[1]}" aria-hidden="true" cond="$_val2_link[1]"></i> {$_val2_link[0]}
 								</a>
 							</li>
 							<block loop="$val2['list']=>$key3,$val3" cond="$val3['selected']">
@@ -152,7 +152,7 @@
 										$_val3_link = explode('|fa-', $val3['link']);
 									}
 									<a href="{$val3['href']}">
-										<i class="fa fa-{$_val3_link[1]}" cond="$_val3_link[1]"></i> {$_val2_link[0]}
+										<i class="fa fa-{$_val3_link[1]}" aria-hidden="true" cond="$_val3_link[1]"></i> {$_val2_link[0]}
 									</a>
 								</li>
 							</block>
