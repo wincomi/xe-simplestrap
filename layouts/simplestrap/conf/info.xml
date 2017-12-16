@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout version="0.2">
-	<title xml:lang="ko">Simplestrap</title>
-	<title xml:lang="en">Simplestrap</title>
-	<version>2.2.3</version>
-	<date>2017-09-27</date>
+	<title xml:lang="ko">Simplestrap 레이아웃</title>
+	<title xml:lang="en">Simplestrap layout</title>
+	<version>2.3</version>
+	<date>2017-12-16</date>
 	<author email_address="admin@wincomi.com" link="https://www.wincomi.com/">
 		<name xml:lang="ko">윈컴이</name>
 		<name xml:lang="en">Wincomi</name>
@@ -78,7 +78,7 @@
 					<title xml:lang="en">Sidebar + Content + Sub sidebar</title>
 				</options>
 			</var>
-			
+
 			<var name="sb_col" type="select">
 				<title xml:lang="ko">프레임 비율</title>
 				<description xml:lang="ko">사이드바 : 컨텐츠 (프레임 형태가 '컨텐츠' 혹은 '서브 사이드바'가 포함될 경우에 작동하지 않습니다.)</description>
@@ -104,7 +104,7 @@
 				<description xml:lang="ko">'프레임 형태' 설정과 관계없이 강제로 '컨텐츠' 프레임으로 고정할 모듈 ID를 입력하세요. 쉼표로 구분합니다. 예) home, main, content</description>
 			</var>
 		</group>
-		
+
 		<group>
 			<title xml:lang="ko">상단바</title>
 			<var name="navbar_fixed" type="select">
@@ -175,7 +175,7 @@
 					<title xml:lang="en">No</title>
 				</options>
 			</var>
-			
+
 			<var name="socialxe_login" type="select">
 				<title xml:lang="ko">소셜 로그인</title>
 				<title xml:lang="en">Social XE</title>
@@ -189,7 +189,7 @@
 					<title xml:lang="en">Yes</title>
 				</options>
 			</var>
-			
+
 			<var name="navbar_member_point" type="select">
 				<title xml:lang="ko">회원 포인트</title>
 				<description xml:lang="ko">(* 캐쉬를 표시하기 위해서는 CONORY님의 캐쉬 시스템 모듈이 필요합니다.)</description>
@@ -218,7 +218,7 @@
 				<options value="Y">
 					<title xml:lang="ko">예</title>
 				</options>
-			</var>			
+			</var>
 			<var name="sb_post" type="select">
 				<title xml:lang="ko">최신 글 출력</title>
 				<description xml:lang="ko">사이드바에 최신 글 위젯을 표시합니다. (* Content 위젯 스킨이 필요합니다.)</description>
@@ -317,7 +317,7 @@
 					<title xml:lang="en">No</title>
 				</options>
 			</var>
-						
+
 			<var name="jumbotron_align" type="select">
 				<title xml:lang="ko">점보트론 글자 정렬</title>
 				<options value="center">
@@ -336,7 +336,7 @@
 				<description xml:lang="ko">'점보트론 사용' 설정과 관계없이 점보트론을 특정 페이지에서 숨길 모듈 ID를 입력하세요. 쉼표로 구분합니다. 예) home, main, no_jumbotron</description>
 			</var>
 		</group>
-				
+
 		<group>
 			<title xml:lang="ko">슬라이더</title>
 			<var name="slide_use" type="select">
@@ -355,7 +355,6 @@
 				<description xml:lang="ko">[TIP] 슬라이더를 사용하는 모듈일 경우, 점보트론을 사용하지 않는 것을 추천합니다.</description>
 			</var>
 
-			
 			<var name="slide_module" type="text">
 				<title xml:lang="ko">슬라이더 표시 모듈</title>
 				<description xml:lang="ko">'슬라이더 사용' 설정과 관계없이 슬라이더를 특정 페이지에서만 표시할 모듈 ID를 입력하세요. 쉼표로 구분합니다. 예) home, main, slider</description>
@@ -365,7 +364,7 @@
 				<title xml:lang="ko">슬라이더 이미지 높이</title>
 				<description xml:lang="ko">입력하신 값에 따라 이미지의 하단이 잘립니다. 입력하지 않으면 업로드된 이미지의 기본 높이로 지정됩니다. (px는 생략합니다.)</description>
 			</var>
-			
+
 			<var name="slide_c1_img" type="image">
 				<title xml:lang="ko">슬라이더 1 이미지</title>
 				<title xml:lang="en">Slider 1 Image</title>
@@ -386,6 +385,7 @@
 				<title xml:lang="en">Slider 1 description</title>
 				<description xml:lang="ko">슬라이더 첫번째 이미지 하단에 나올 설명을 입력하세요. (HTML 태그 사용 가능)</description>
 			</var>
+
 			<var name="slide_c2_img" type="image">
 				<title xml:lang="ko">슬라이더 2 이미지</title>
 				<title xml:lang="en">Slider 2 Image</title>
@@ -402,7 +402,7 @@
 				<title xml:lang="ko">슬라이더 2 설명</title>
 				<title xml:lang="en">Slider 2 description</title>
 			</var>
-			
+
 			<var name="slide_c3_img" type="image">
 				<title xml:lang="ko">슬라이더 3 이미지</title>
 				<title xml:lang="en">Slider 2 Image</title>
@@ -419,7 +419,7 @@
 				<title xml:lang="ko">슬라이더 3 설명</title>
 				<title xml:lang="en">Slider 3 description</title>
 			</var>
-			
+
 			<var name="slide_c4_img" type="image">
 				<title xml:lang="ko">슬라이더 4 이미지</title>
 				<title xml:lang="en">Slider 4 Image</title>
@@ -436,7 +436,7 @@
 				<title xml:lang="ko">슬라이더 4 설명</title>
 				<title xml:lang="en">Slider 4 description</title>
 			</var>
-			
+
 			<var name="slide_c5_img" type="image">
 				<title xml:lang="ko">슬라이더 5 이미지</title>
 				<title xml:lang="en">Slider 5 Image</title>
@@ -454,7 +454,7 @@
 				<title xml:lang="en">Slider 5 description</title>
 			</var>
 		</group>
-		
+
 		<group>
 			<title xml:lang="ko">푸터</title>
 			<var name="footer_copyright" type="textarea">
@@ -495,7 +495,6 @@
 			</var>
 		</group>
 
-
 		<group>
 			<title xml:lang="ko">커스텀 / 고급</title>
 			<var name="premium" type="select">
@@ -508,7 +507,7 @@
 					<title xml:lang="ko">예</title>
 				</options>
 			</var>
-			
+
 			<var name="custom" type="checkbox">
 				<title xml:lang="ko">커스텀 파일</title>
 				<title xml:lang="en">Custom</title>
@@ -544,7 +543,7 @@
 					<title xml:lang="ko">custom_setting.html</title>
 				</options>
 			</var>
-			
+
 			<var name="use_breadcrumb" type="select">
 				<title xml:lang="ko">빵 메뉴</title>
 				<description xml:lang="ko">메뉴 위치를 알려주는 빵 메뉴를 사용합니다.</description>
@@ -605,7 +604,7 @@
 			</var>
 		</group>
 	</extra_vars>
-	
+
 	<menus>
 		<menu name="main_menu" maxdepth="3" default="true">
 			<title xml:lang="ko">메인 메뉴</title>
