@@ -319,7 +319,7 @@ body a.xe_mobile:before{content:"\f10B";font-weight:normal;margin-right:5px;font
 .bd table{border-collapse:separate;}
 .bd #faq>li.hide{display:block !important}
 .bd .bd_cnb.open .hidden{display:block !important;visibility:visible !important}
-.bd .rd_ft .rd_file{display:table !important}
+.bd .rd_ft .rd_file.hide[style*='block']{display:block !important}
 #content div.sm div.smWrite button{width:25px}
 #content #bd_wizard{z-index:1031 !important}
 #content #bd_wizard_tg{top:60px !important}
