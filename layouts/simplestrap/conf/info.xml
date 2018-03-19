@@ -2,11 +2,11 @@
 <layout version="0.2">
 	<title xml:lang="ko">Simplestrap 레이아웃</title>
 	<title xml:lang="en">Simplestrap layout</title>
-	<version>2.3</version>
+	<version>2.3.1</version>
 	<date>2017-12-16</date>
 	<author email_address="admin@wincomi.com" link="https://www.wincomi.com/">
-		<name xml:lang="ko">윈컴이</name>
-		<name xml:lang="en">Wincomi</name>
+		<name xml:lang="ko">코미 (a.k.a. 윈컴이)</name>
+		<name xml:lang="en">COMI (a.k.a. Wincomi)</name>
 	</author>
 	<extra_vars>
 		<group>
@@ -513,10 +513,10 @@
 				<title xml:lang="en">Custom</title>
 				<description xml:lang="ko">원하는 파일(위치)를 체크한 후 './layouts/simplestrap/custom/' 경로에 커스텀 파일을 업로드하여 커스텀 파일을 불러옵니다.</description>
 				<options value="custom_style">
-					<title xml:lang="ko">custom_style.css (CSS)</title>
+					<title xml:lang="ko">custom_style.css</title>
 				</options>
 				<options value="custom_js">
-					<title xml:lang="ko">custom_js.js (Javascript)</title>
+					<title xml:lang="ko">custom_js.js</title>
 				</options>
 				<options value="custom_top">
 					<title xml:lang="ko">custom_top.html (페이지 상단/컨테이너 상단)</title>
@@ -525,10 +525,16 @@
 					<title xml:lang="ko">custom_bottom.html (페이지 최하단)</title>
 				</options>
 				<options value="custom_content_top">
-					<title xml:lang="ko">custom_content_top.html (컨텐츠 상단)</title>
+					<title xml:lang="ko">custom_content_top.html (컨텐츠 안쪽 상단)</title>
 				</options>
 				<options value="custom_content_bottom">
-					<title xml:lang="ko">custom_content_bottom.html (컨텐츠 하단)</title>
+					<title xml:lang="ko">custom_content_bottom.html (컨텐츠 안쪽 하단)</title>
+				</options>
+				<options value="custom_content_top_outside">
+					<title xml:lang="ko">custom_content_top_outside.html (컨텐츠 바깥쪽 상단)</title>
+				</options>
+				<options value="custom_content_bottom_outside">
+					<title xml:lang="ko">custom_content_bottom_outside.html (컨텐츠 바깥쪽 하단)</title>
 				</options>
 				<options value="custom_sidebar_top">
 					<title xml:lang="ko">custom_sidebar_top.html (사이드바 상단)</title>

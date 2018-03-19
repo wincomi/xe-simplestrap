@@ -115,6 +115,7 @@
 <div class="container" id="main-container">
 	<div class="row <!--@if($li->site_frame!='sidebar_content_sidebar')-->row-offcanvas<!--@if($li->site_frame=='sidebar_content')--> row-offcanvas-left<!--@elseif($li->site_frame=='content_sidebar')--> row-offcanvas-left<!--@end--><!--@end-->" id="main-row">
 		<div id="content" class="col<!--@if($li->site_frame=='sidebar_content_sidebar')--> col-sm-8 col-sm-push-2<!--@elseif($li->site_frame!='content')--> col-sm-{12-$li->sb_col}<!--@else--> col-sm-12<!--@end--><!--@if($li->site_frame=='sidebar_content')--> col-sm-push-{$li->sb_col}<!--@end-->">
+			<include target="./custom/custom_content_top_outside.html" cond="in_array('custom_content_top_outside', $li->custom)" />
 			<article class="content panel panel-default" itemscope itemtype="http://schema.org/Article">
 				<div class="panel-heading" cond="$li->site_frame != 'content' && $li->site_frame != 'sidebar_content_sidebar' && $li->content_panel_heading != 'N'">
 					<button id="sidebar-toggle-button" class="hidden-xs pull-left close"|cond="$li->site_frame=='sidebar_content'" class="hidden-xs pull-right close"|cond="$li->site_frame=='content_sidebar' || !$li->site_frame" data-toggle="tooltip" data-title="{$lang->ss_fullscreen_desc}"><i class="fa fa-angle-left"|cond="$li->site_frame=='sidebar_content'" class="fa fa-angle-right"|cond="$li->site_frame=='content_sidebar' || !$li->site_frame" aria-hidden="true"></i></button>
@@ -163,6 +164,7 @@
 					<include target="./custom/custom_content_bottom.html" cond="in_array('custom_content_bottom',$li->custom)" />
 				</div>
 			</article>
+			<include target="./custom/custom_content_bottom_outside.html" cond="in_array('custom_content_bottom_outside', $li->custom)" />
 		</div>
 		<aside id="sidebar" class="sidebar col<!--@if($li->site_frame=='sidebar_content_sidebar')--> col-sm-2 col-sm-pull-8<!--@else--> col-sm-{$li->sb_col}<!--@if($li->site_frame=='sidebar_content')--> col-sm-pull-{12-$li->sb_col}<!--@end--><!--@end-->" cond="$li->site_frame!='content'">
 			<include target="_sidebar.html" />
