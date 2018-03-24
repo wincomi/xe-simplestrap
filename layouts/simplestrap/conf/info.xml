@@ -318,6 +318,17 @@
 				</options>
 			</var>
 
+			<var name="jumbotron_position" type="select">
+				<title xml:lang="ko">점보트론 위치</title>
+				<description xml:lang="ko">* 컨테이너 안 설정은 상단바 위치를 '브라우저 상단과 여백을 둡니다.'로 설정했을 경우 추천합니다.</description>
+				<options value="outside">
+					<title xml:lang="ko">컨테이너 밖</title>
+				</options>
+				<options value="inside">
+					<title xml:lang="ko">컨테이너 안</title>
+				</options>
+			</var>
+
 			<var name="jumbotron_align" type="select">
 				<title xml:lang="ko">점보트론 글자 정렬</title>
 				<options value="center">

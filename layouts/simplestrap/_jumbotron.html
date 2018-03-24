@@ -1,4 +1,7 @@
 {@ $module = $module_info->module;}
+<!--@if($li->jumbotron_position == 'inside')-->
+<div class="container">
+<!--@end-->
 <header id="jumbotron" class="jumbotron jumbotron-{$colorset} text-{$li->jumbotron_align} <!--@if($_COOKIE['simplestrap_jumbotron']=='hide')--> jumbotron-hide<!--@end-->">
 	<block cond="$is_member_menu!='Y'">
 	<div class="container">
@@ -97,4 +100,7 @@
 		</h1>
 	</div>
 </header>
+<!--@if($li->jumbotron_position == 'inside')-->
+</div><!--// end .container -->
+<!--@end-->
 {@ unset($module); }
