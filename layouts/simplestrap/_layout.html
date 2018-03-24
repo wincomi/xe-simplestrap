@@ -2,7 +2,7 @@
 <!--@if($li->navbar_fixed == 'N2')-->
 <div class="container">
 <!--@end-->
-<nav id="navbar" class="navbar <!--@if($li->navbar_color == 'inverse')-->navbar-inverse<!--@else-->navbar-default<!--@end--><!--@if($li->navbar_fixed != 'N2')--><!--@if($li->navbar_fixed != 'N')--> navbar-fixed-top<!--@else--> navbar-static-top<!--@end--><!--@end-->" role="navigation" style="margin-top: 20px;border-width: 2px;padding-left: 15px;padding-right: 15px"|cond="$li->navbar_fixed == 'N2'">
+<nav id="navbar" class="navbar <!--@if($li->navbar_color == 'inverse')-->navbar-inverse<!--@else-->navbar-default<!--@end--><!--@if($li->navbar_fixed != 'N2')--><!--@if($li->navbar_fixed != 'N')--> navbar-fixed-top<!--@else--> navbar-static-top<!--@end--><!--@end-->" role="navigation" style="margin-top: 20px;border-width:<!--@if($li->navbar_border_bottom == 'N')-->0<!--@else-->2px<!--@end-->;padding-left: 15px;padding-right: 15px"|cond="$li->navbar_fixed == 'N2'">
 	<!--@if($li->navbar_fixed != 'N2')-->
 	<div class="container">
 	<!--@end-->
