@@ -2,7 +2,7 @@
 <layout version="0.2">
 	<title xml:lang="ko">Simplestrap 레이아웃</title>
 	<title xml:lang="en">Simplestrap layout</title>
-	<version>2.3.1</version>
+	<version>2.4</version>
 	<date>2017-12-16</date>
 	<author email_address="admin@wincomi.com" link="https://www.wincomi.com/">
 		<name xml:lang="ko">코미 (a.k.a. 윈컴이)</name>
@@ -108,15 +108,15 @@
 		<group>
 			<title xml:lang="ko">상단바</title>
 			<var name="navbar_fixed" type="select">
-				<title xml:lang="ko">상단바 고정</title>
-				<description xml:lang="ko">상단바를 항상 브라우저 상단에 고정합니다.</description>
+				<title xml:lang="ko">상단바 위치</title>
 				<options value="Y">
-					<title xml:lang="ko">예</title>
-					<title xml:lang="en">Yes</title>
+					<title xml:lang="ko">항상 브라우저 상단에 고정합니다.</title>
 				</options>
 				<options value="N">
-					<title xml:lang="ko">아니요</title>
-					<title xml:lang="en">No</title>
+					<title xml:lang="ko">브라우저 상단에 위치합니다.</title>
+				</options>
+				<options value="N2">
+					<title xml:lang="ko">브라우저 상단과 여백을 둡니다.</title>
 				</options>
 			</var>
 
@@ -134,8 +134,8 @@
 			</var>
 
 			<var name="navbar_border_bottom" type="select">
-				<title xml:lang="ko">상단바 하단 테두리</title>
-				<description xml:lang="ko">상단바에 컬러셋에서 지정한 색상으로 하단 테두리를 표시합니다.</description>
+				<title xml:lang="ko">상단바 테두리</title>
+				<description xml:lang="ko">상단바에 컬러셋에서 지정한 색상으로 테두리를 표시합니다.</description>
 				<options value="Y">
 					<title xml:lang="ko">사용</title>
 					<title xml:lang="en">Yes</title>

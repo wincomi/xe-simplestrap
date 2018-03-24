@@ -1,6 +1,11 @@
 <a href="#content" class="sr-only ss-skip">{$lang->ss_skip_to_content}</a>
-<nav id="navbar" class="navbar <!--@if($li->navbar_color=='inverse')-->navbar-inverse<!--@else-->navbar-default<!--@end--><!--@if($li->navbar_fixed!='N')--> navbar-fixed-top<!--@else--> navbar-static-top<!--@end-->" role="navigation">
+<!--@if($li->navbar_fixed == 'N2')-->
+<div class="container">
+<!--@end-->
+<nav id="navbar" class="navbar <!--@if($li->navbar_color == 'inverse')-->navbar-inverse<!--@else-->navbar-default<!--@end--><!--@if($li->navbar_fixed != 'N2')--><!--@if($li->navbar_fixed != 'N')--> navbar-fixed-top<!--@else--> navbar-static-top<!--@end--><!--@end-->" role="navigation" style="margin-top: 20px;border-width: 2px;padding-left: 15px;padding-right: 15px"|cond="$li->navbar_fixed == 'N2'">
+	<!--@if($li->navbar_fixed != 'N2')-->
 	<div class="container">
+	<!--@end-->
 		<div class="navbar-header">
 			<span class="sr-only">{$lang->ss_toggle_navigation}</span>
 			<button type="button" class="navbar-toggle navbar-toggle-left" data-toggle="collapse" data-target="#main-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
@@ -106,8 +111,13 @@
 				</li>
 			</ul>
 		</div>
+	<!--@if($li->navbar_fixed != 'N2')-->
 	</div>
+	<!--@end-->
 </nav>
+<!--@if($li->navbar_fixed == 'N2')-->
+</div>
+<!--@end-->
 <include target="_carousel.html" cond="$li->slide_use != 'N'" />
 <include target="_jumbotron.html" cond="$li->jumbotron!='N' && !in_array('custom_jumbotron',$li->custom)" />
 <include target="./custom/custom_jumbotron.html" cond="$li->jumbotron!='N' && in_array('custom_jumbotron',$li->custom)" />

@@ -31,7 +31,7 @@ a..list-group-item.active>.badge,
 .form-control:focus{border-color:{$colorset_cc};-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075)}
 *:focus{outline-color:{$colorset_cc}!important}
 
-<block cond="$li->jumbotron == 'N' && $li->slide_use == 'N' && $li->navbar_fixed != 'N'">
+<block cond="$li->jumbotron == 'N' && $li->slide_use == 'N' && $li->navbar_fixed != 'N' && $li->navbar_fixed != 'N2'">
 body{padding-top:62px}
 </block>
 <block cond="$li->navbar_fixed == 'N'">
