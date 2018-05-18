@@ -84,7 +84,7 @@ img{max-width:100%;height:auto;}/* .img-responsive */
 #main-carousel .carousel-inner>.item>img{margin: 0 auto;}
 
 /* #jumbotron */
-#jumbotron{-webkit-transition:padding .25s ease;margin-bottom:15px;}
+#jumbotron{-webkit-transition:padding .25s ease;margin-bottom:20px;}
 #jumbotron>.container{position:relative;}
 #jumbotron h1{font-weight:100}
 #jumbotron h1 a:hover{text-decoration:none}
@@ -163,6 +163,8 @@ img{max-width:100%;height:auto;}/* .img-responsive */
 
 #navbar img.addon_menu_new{margin-left:5px!important}
 #navbar label#keepid{text-align:left;margin-top:10px;font-weight:normal}
+
+.navbar-inverse .navbar-toggle{color: #fff}
 
 /* #modal-login */
 #modal-login .login-hr{margin:10px -15px;text-align:center;color:#777}
