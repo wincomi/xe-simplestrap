@@ -9,7 +9,7 @@
 	<input type="hidden" name="act" value="procCommunicationDeleteFriend" />
 	<input type="hidden" name="xe_validator_id" value="modules/communication/skins/simplestrap/frineds/1" />
 	<fieldset>
-		<div style="margin-bottom:10px;text-align:right">
+		<div class="form-inline text-right" style="margin-bottom:10px;">
 			<select name="jumpMenu" id="jumpMenu" class="form-control" onchange="doJumpFriendGroup()" style="display:inline-block;width:auto;max-width:300px">
 				<option value="">{$lang->default_friend_group}</option>
 				<!--@foreach($friend_group_list as $key => $val)-->
@@ -46,7 +46,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="text-right">
+		<div class="form-inline text-right">
 			<select name="target_friend_group_srl" class="form-control" style="display:inline-block;width:auto;max-width:300px">
 				<option loop="$friend_group_list => $key,$val" value="{$val->friend_group_srl}">{$val->title}</option>
 			</select>
