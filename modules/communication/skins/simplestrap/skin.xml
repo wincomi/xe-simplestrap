@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skin version="0.2">
-	<title xml:lang="ko">Simplestrap (Bootstrap 3)</title>
+	<title xml:lang="ko">Simplestrap 커뮤니케이션 모듈 스킨</title>
 	<description xml:lang="ko">Bootstrap 3 스타일 커뮤니케이션 모듈 스킨</description>
-	<version>2.0.1</version>
+	<version>2.0.2</version>
 	<date>2017-03-18</date>
 
 	<author email_address="admin@wincomi.com" link="https://www.wincomi.com/">
-		<name xml:lang="ko">윈컴이</name>
-		<name xml:lang="en">Wincomi</name>
+		<name xml:lang="ko">코미</name>
+		<name xml:lang="en">COMI</name>
 	</author>
 
 	<colorset />
