@@ -56,7 +56,7 @@ border-radius: 4px;
 .xm-form .btn{margin-bottom:10px}
 @media (min-width: 768px) {
 .xm-form{max-width:550px;padding:0 10px;box-shadow: 0 1px 2px rgba(0, 0, 0, .05);margin:20px auto;border:1px solid #e7e7e7;}
-.xm-form-mini{max-width:350px}
+.xm-form-mini{max-width:300px}
 .xm-form .xm-title{border-top:0}
 
 .xm-form .btn{margin-bottom:0}
