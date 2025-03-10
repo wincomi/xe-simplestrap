@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout version="0.2">
-	<title xml:lang="ko">Simplestrap 레이아웃</title>
-	<title xml:lang="en">Simplestrap layout</title>
-	<version>2.4</version>
+	<title xml:lang="ko">Simplestrap 레이아웃 (for Rhymix)</title>
+	<title xml:lang="en">Simplestrap Layout (for Rhymix)</title>
+	<version>3.0</version>
 	<date>2017-12-16</date>
 	<author email_address="admin@wincomi.com" link="https://www.wincomi.com/">
 		<name xml:lang="ko">코미 (a.k.a. 윈컴이)</name>
@@ -611,7 +611,10 @@
 
 			<var name="xe_css_remove" type="select">
 				<title xml:lang="ko">코어 기본 CSS</title>
-				<description xml:lang="ko">xe{.min}.css (Rhymix일 경우 rhymix.less{.min.}.css)를 제거하는 방법을 선택하세요. 제거하지 않으면 레이아웃 디자인에 문제가 발생할 수 있습니다.</description>
+				<description xml:lang="ko">xe.min.css (Rhymix일 경우 rhymix.scss.min.css)를 제거하는 방법을 선택하세요. 제거하지 않으면 레이아웃 디자인에 문제가 발생할 수 있습니다.</description>
+				<options value="define">
+					<title xml:lang="ko">DISABLE_XE_BTN_STYLES (기본)</title>
+				</options>
 				<options value="script">
 					<title xml:lang="ko">Javascript</title>
 				</options>

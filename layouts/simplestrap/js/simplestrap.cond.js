@@ -1,8 +1,8 @@
-<block cond="!$li->xe_css_remove || $li->xe_css_remove=='script'">
+<block cond="$li->xe_css_remove=='script'">
 <!--@if(defined('RX_VERSION'))-->
-jQuery("link[rel=stylesheet][href*='rhymix.less.<block cond="!__DEBUG__">min.</block>css']").remove();
+jQuery("link[rel=stylesheet][href*='rhymix.scss.min.css']").remove();
 <!--@else-->
-jQuery("link[rel=stylesheet][href*='common/css/xe.<block cond="!__DEBUG__">min.</block>css']").remove();
+jQuery("link[rel=stylesheet][href*='common/css/xe.min.css']").remove();
 <!--@end-->
 </block>
 (function(e,t,n){e('<span class="visible-desktop" style="font-size:1px !important;position:absolute;bottom:0" id="cwspear-is-awesome">.</span>').appendTo("body");var r=function(){return e("#cwspear-is-awesome").is(":visible")},i=e();e.fn.dropdownHover=function(n){i=i.add(this.parent());return this.each(function(){var s=e(this).parent(),o={delay:100,instantlyCloseOthers:!0},u={delay:e(this).data("delay"),instantlyCloseOthers:e(this).data("close-others")},a=e.extend(!0,{},o,n,u),f;s.hover(function(){if(r()){a.instantlyCloseOthers===!0&&i.removeClass("open");t.clearTimeout(f);e(this).addClass("open")}},function(){r()&&(f=t.setTimeout(function(){s.removeClass("open")},a.delay))})})};e(document).ready(function(){e('[data-hover="dropdown"]').dropdownHover()})})(jQuery,this);

@@ -1,5 +1,9 @@
 {@
 $li = $layout_info;
+
+if(!$li->xe_css_remove || $li->xe_css_remove == 'define')
+	define('DISABLE_XE_BTN_STYLES', true);
+
 $is_index_module = ($site_module_info->module_srl === $current_module_info->module_srl);
 
 if(!$li->custom) $li->custom = array();
@@ -44,20 +48,11 @@ if($li->jumbotron_hide_mid):
 endif;
 }
 <load target="./lang/lang.xml" />
-<block cond="__DEBUG__">
-<load target="./css/bootstrap.css" index="-5"  />
-<load target="./css/font-awesome.css" index="-4"  /> 
-<load target="./css/simplestrap.css" index="-3" />
-<load target="./js/bootstrap.js" type="body" />
-<load target="./js/jquery.placeholder.js" targetie="lt IE 10" type="body" />
-</block>
-<block cond="!__DEBUG__">
 <load target="./css/bootstrap.min.css" index="-5"  />
 <load target="./css/font-awesome.min.css" index="-4" />
 <load target="./css/simplestrap.min.css" index="-3" />
 <load target="./js/bootstrap.min.js" type="body" />
 <load target="./js/jquery.placeholder.min.js" targetie="lt IE 10" type="body" />
-</block>
 <load target="./js/jquery.cookie.min.js" />
 <load target="./js/respond.min.js" targetie="lt IE 9" type="body" index="-2" />
 
